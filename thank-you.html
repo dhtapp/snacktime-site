@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Thank You!</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+
+  body {
+    margin: 0;
+    background: linear-gradient(135deg, #d4f7d4 0%, #a0d6a0 100%);
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    color: #2d662d;
+  }
+
+  .container {
+    background: white;
+    border-radius: 20px;
+    padding: 3rem 4rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    animation: fadeInUp 1s ease forwards;
+  }
+
+  h1 {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1.25rem;
+    margin: 1rem 0 2rem;
+  }
+
+  button {
+    background-color: #2d662d;
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover, button:focus {
+    background-color: #1f441f;
+    outline: none;
+  }
+
+  .social-share {
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .social-share a {
+    text-decoration: none;
+    font-weight: 600;
+    color: #2d662d;
+    border: 2px solid #2d662d;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .social-share a:hover, .social-share a:focus {
+    background-color: #2d662d;
+    color: white;
+    outline: none;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .confetti-piece {
+    position: fixed;
+    width: 8px;
+    height: 8px;
+    background-color: #2d662d;
+    opacity: 0.7;
+    transform-origin: center;
+    animation-timing-function: ease-out;
+    border-radius: 2px;
+    pointer-events: none;
+    z-index: 9999;
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      width: 90%;
+      padding: 2rem 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div role="alert" aria-live="polite" class="container">
+  <h1>🎉 Thank You!</h1>
+  <p>You’ve joined the revolution.<br />We’ll be in touch soon!</p>
+  <button id="homeButton" aria-label="Back to homepage">Back to Home (10)</button>
+  <div class="social-share" aria-label="Follow us on social media">
+    <a href="https://www.instagram.com/Snacktime_Energy" target="_blank" rel="noopener noreferrer" aria-label="Visit our Instagram">
+      📸 Instagram
+    </a>
+    <a href="https://www.tiktok.com/@SnacktimeEnergy" target="_blank" rel="noopener noreferrer" aria-label="Visit our TikTok">
+      🎵 TikTok
+    </a>
+  </div>
+</div>
+
+<script>
+  let countdown = 10;
+  const btn = document.getElementById('homeButton');
+  btn.textContent = `Back to Home (${countdown})`;
+
+  const interval = setInterval(() => {
+    countdown--;
+    if (countdown < 0) {
+      clearInterval(interval);
+      window.location.href = 'index.html';
+    } else {
+      btn.textContent = `Back to Home (${countdown})`;
+    }
+  }, 1000);
+
+  btn.addEventListener('click', () => {
+    window.location.href = 'index.html';
+  });
+
+  const colors = ['#2d662d', '#4caf50', '#81c784', '#a5d6a7'];
+  const numConfetti = 80;
+
+  function createConfettiPiece() {
+    const div = document.createElement('div');
+    div.classList.add('confetti-piece');
+    div.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+    div.style.left = Math.random() * window.innerWidth + 'px';
+    div.style.top = '-10px';
+    const size = 5 + Math.random() * 5;
+    div.style.width = size + 'px';
+    div.style.height = size + 'px';
+    div.style.opacity = 0.7 + Math.random() * 0.3;
+    div.style.transform = `rotate(${Math.random() * 360}deg)`;
+    div.style.animation = `fall ${2 + Math.random() * 3}s linear forwards`;
+    document.body.appendChild(div);
+
+    setTimeout(() => {
+      div.remove();
+    }, 5000);
+  }
+
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+  `;
+  document.head.appendChild(style);
+
+  let confettiInterval = setInterval(createConfettiPiece, 50);
+  setTimeout(() => clearInterval(confettiInterval), 3000);
+</script>
+
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=356489482"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '356489482');
+</script>
+
+</body>
+</html>

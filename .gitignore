@@ -1,0 +1,11 @@
+# Ignore macOS system files
+.DS_Store
+
+# Ignore node modules if you ever add a JS project
+node_modules/
+
+# Ignore logs
+*.log
+
+# Ignore any local environment files
+.env

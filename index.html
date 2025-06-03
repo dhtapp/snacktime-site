@@ -1,0 +1,903 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snacktime Energy | Fuel for Real Parents</title>
+
+        <!-- SEO Meta Tags -->
+    <meta name="description" content="Snacktime Energy is a clean, science-built energy gummy made for parents. Smooth energy. No crash. No guilt. Launching August 2025.">
+    <meta property="og:title" content="Snacktime Energy | Fuel for Real Parents">
+    <meta property="og:description" content="Science-built energy gummies made for parents who do it all. Launching August 2025.">
+    <meta property="og:image" content="https://SnacktimeEnergy.com/assets/packaging.jpg">
+    <meta property="og:url" content="https://SnacktimeEnergy.com">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Snacktime Energy | Fuel for Real Parents">
+    <meta name="twitter:description" content="Clean, crash-free energy for the life you're really living.">
+    <meta name="twitter:image" content="https://SnacktimeEnergy.com/assets/packaging.jpg">
+
+         <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=356489482"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '356489482');
+    </script>
+    <!-- End Google Analytics -->
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ff7a3d 0%, #8bc8a8 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo {
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .logo::before {
+            display: none;
+        }
+
+        .logo img {
+            width: 500px;
+            height: 500px;
+            transition: all 0.3s ease;
+            object-fit: cover;
+        }
+
+        .logo img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            background: linear-gradient(135deg, #ff7a3d, #8bc8a8);
+            border-radius: 50%;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .logo:hover::after {
+            opacity: 0.3;
+        }
+        
+        .brand-name {
+            font-size: 2rem;
+            font-weight: 900;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="25" cy="25" r="2" fill="rgba(255,255,255,0.1)"/><circle cx="75" cy="75" r="1.5" fill="rgba(255,255,255,0.1)"/><circle cx="50" cy="10" r="1" fill="rgba(255,255,255,0.1)"/></svg>');
+            animation: float 20s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes float {
+            0% { transform: translate(-50px, -50px) rotate(0deg); }
+            100% { transform: translate(-50px, -50px) rotate(360deg); }
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+        
+        .development-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.2);
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+            border: 1px solid rgba(255,255,255,0.3);
+            backdrop-filter: blur(10px);
+        }
+        
+        .reality-check {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .timeline {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 40px auto;
+        }
+        
+        .timeline-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transform: translateY(0);
+            transition: all 0.3s ease;
+            border-top: 3px solid #ff7a3d;
+        }
+        
+        .timeline-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .time {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #ff7a3d;
+            margin-bottom: 10px;
+        }
+        
+        .energy-meter {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+        
+        .energy-fill {
+            height: 100%;
+            border-radius: 10px;
+            transition: width 2s ease;
+        }
+        
+        .high { background: linear-gradient(90deg, #8bc8a8, #28a745); width: 90%; }
+        .medium { background: linear-gradient(90deg, #ff7a3d, #ffc107); width: 60%; }
+        .low { background: linear-gradient(90deg, #dc3545, #e83e8c); width: 30%; }
+        .empty { background: #6c757d; width: 10%; }
+        
+        .missed-moments {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .moments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .moment-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+            text-align: left;
+        }
+        
+        .moment-emoji {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .product-showcase {
+            background: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+        
+        .product-hero {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+        
+        .product-image {
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            min-width: 600px;
+            min-height: 500px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            object-fit: contain;
+        }
+        
+        .product-info h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+            font-weight: 800;
+            color: #333;
+            text-align: left;
+        }
+        
+        .product-info p {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .science-badge {
+            background: linear-gradient(135deg, #8bc8a8, #ff7a3d);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        
+        .ingredients-section {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 80px 20px;
+        }
+        
+        .ingredients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+        
+        .ingredient-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 5px solid #ff7a3d;
+            transition: transform 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+        
+        .ingredient-card:hover {
+            transform: scale(1.02);
+        }
+        
+        .ingredient-card:nth-child(even) {
+            border-left-color: #8bc8a8;
+        }
+        
+        .ingredient-name {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ff7a3d;
+            margin-bottom: 10px;
+        }
+        
+        .ingredient-card:nth-child(even) .ingredient-name {
+            color: #8bc8a8;
+        }
+        
+        .ingredient-amount {
+            font-size: 0.9rem;
+            color: #6c757d;
+            margin-bottom: 15px;
+        }
+        
+        .what-kids-notice {
+            background: linear-gradient(135deg, #8bc8a8, #20c997);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .kids-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .kids-benefit {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        
+        .kids-benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
+        .progress-section {
+            background: white;
+            padding: 60px 20px;
+            text-align: center;
+        }
+        
+        .progress-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background: #f8f9fa;
+            padding: 40px;
+            border-radius: 20px;
+            border: 3px solid #ff7a3d;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e9ecef;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 20px 0;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #ff7a3d, #8bc8a8);
+            width: 75%;
+            border-radius: 15px;
+            transition: width 3s ease;
+            position: relative;
+        }
+        
+        .progress-fill::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: 20px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4));
+            animation: shimmer 2s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, #2d3748, #4a5568);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .waitlist-form {
+            max-width: 500px;
+            margin: 40px auto;
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .waitlist-form input {
+            flex: 1;
+            min-width: 250px;
+            padding: 15px 20px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .waitlist-form button {
+            padding: 15px 30px;
+            background: linear-gradient(135deg, #ff7a3d, #8bc8a8);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-width: 150px;
+        }
+        
+        .waitlist-form button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(255, 122, 61, 0.4);
+        }
+        
+        .benefits-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .benefit-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            border-radius: 15px;
+        }
+        
+        .checkmark {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #ff7a3d, #8bc8a8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+        
+        .section-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .product-hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .logo img {
+                width: 300px;
+                height: 300px;
+            }
+
+            .product-info h2,
+            .product-info p {
+                text-align: center;
+            }
+            
+            .waitlist-form {
+                flex-direction: column;
+            }
+            
+            .waitlist-form input,
+            .waitlist-form button {
+                min-width: auto;
+                width: 100%;
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <div class="logo">
+                 <img src="/home/david/Documents/snacktime-site/logo.png" alt="Snacktime Energy logo" width="120" height="120" style="border-radius: 50%;" />
+            </div>
+            <div class="brand-name">SNACKTIME ENERGY</div>
+            <h1>Hey Mom. Hey Dad. You're Running on Empty.</h1>
+            <p class="subtitle">It's time for an energy solution that actually understands your life</p>
+            <div class="development-badge">Expected Launch: August 2025</div>
+        </div>
+    </section>
+
+    <section class="reality-check">
+        <div class="container">
+            <h2 class="section-title">Your Day in Energy Levels</h2>
+            <p class="section-subtitle">Sound familiar?</p>
+            
+            <div class="timeline">
+                <div class="timeline-item fade-in">
+                    <div class="time">7:00 AM</div>
+                    <div class="energy-meter">
+                        <div class="energy-fill high"></div>
+                    </div>
+                    <p>"I've got this! Today will be different!"</p>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="time">11:00 AM</div>
+                    <div class="energy-meter">
+                        <div class="energy-fill medium"></div>
+                    </div>
+                    <p>Third snack request. Still hanging in there.</p>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="time">3:00 PM</div>
+                    <div class="energy-meter">
+                        <div class="energy-fill low"></div>
+                    </div>
+                    <p>The afternoon crash hits like a truck.</p>
+                </div>
+                
+                <div class="timeline-item fade-in">
+                    <div class="time">7:00 PM</div>
+                    <div class="energy-meter">
+                        <div class="energy-fill empty"></div>
+                    </div>
+                    <p>Dinner? Bedtime routine? Send help.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="missed-moments">
+        <div class="container">
+            <h2 class="section-title">The Things You Miss When You're Running on Empty</h2>
+            <p class="section-subtitle">Energy isn't just about you—it's about showing up for the moments that matter</p>
+            
+            <div class="moments-grid">
+                <div class="moment-card fade-in">
+                    <span class="moment-emoji">📚</span>
+                    <h3>Bedtime Stories</h3>
+                    <p>Instead of "just one more page," you're counting down the minutes until you can collapse on the couch.</p>
+                </div>
+                
+                <div class="moment-card fade-in">
+                    <span class="moment-emoji">🏃‍♀️</span>
+                    <h3>Playing at the Park</h3>
+                    <p>"Mommy needs to sit down" becomes your catchphrase while they beg you to push them on the swings.</p>
+                </div>
+                
+                <div class="moment-card fade-in">
+                    <span class="moment-emoji">🎨</span>
+                    <h3>Creative Adventures</h3>
+                    <p>Art projects feel overwhelming. Building forts sounds exhausting. Their imagination waits while you recharge.</p>
+                </div>
+                
+                <div class="moment-card fade-in">
+                    <span class="moment-emoji">❤️</span>
+                    <h3>Being Fully Present</h3>
+                    <p>They're talking, but you're mentally running through tomorrow's to-do list because today already defeated you.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="product-showcase">
+        <div class="container">
+            <div class="product-hero">
+                <div class="product-image fade-in">
+                    <img src="/home/david/Documents/snacktime-site/packaging.png" alt="Snacktime Energy Package" style="background: linear-gradient(45deg, #ff7a3d, #8bc8a8); min-height: 400px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem;">
+                    </img>
+                </div>
+                
+                <div class="product-info fade-in">
+                    <div class="science-badge">SCIENCE-BUILT. LIFE-TESTED.</div>
+                    <h2>Meet Snacktime Energy</h2>
+                    <p>Two delicious gummies that deliver smooth, sustained energy without the crash, jitters, or 3 AM guilt about that fourth cup of coffee.</p>
+                    <p style="color: #ff7a3d; font-weight: bold; font-size: 1rem;">Made by parents, for parents. Because we've been there.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="ingredients-section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title" style="color: #333;">The Science Behind Your Comeback</h2>
+            <p class="section-subtitle" style="color: #666;">Every ingredient chosen specifically for the parent life</p>
+            
+            <div class="ingredients-grid">
+                <div class="ingredient-card fade-in">
+                    <div class="ingredient-name">Natural Caffeine</div>
+                    <div class="ingredient-amount">80mg from Green Tea</div>
+                    <p>About 3/4 cup of coffee, but without the acid or crash. Perfect for that afternoon pickup without disrupting bedtime.</p>
+                </div>
+                
+                <div class="ingredient-card fade-in">
+                    <div class="ingredient-name">L-Theanine</div>
+                    <div class="ingredient-amount">Clinical Dose</div>
+                    <p>The zen master of the formula. Keeps you calm and focused instead of scattered and anxious—because kids can sense stress.</p>
+                </div>
+                
+                <div class="ingredient-card fade-in">
+                    <div class="ingredient-name">Rhodiola Rosea</div>
+                    <div class="ingredient-amount">Adaptogenic Dose</div>
+                    <p>Ancient stress-buster that helps your body handle whatever chaos the day throws at you. Tantrums included.</p>
+                </div>
+                
+                <div class="ingredient-card fade-in">
+                    <div class="ingredient-name">Vitamin B12</div>
+                    <div class="ingredient-amount">200μg</div>
+                    <p>Your cellular energy factory's best friend. Helps convert food into actual usable energy—not just sugar highs.</p>
+                </div>
+                
+                <div class="ingredient-card fade-in">
+                    <div class="ingredient-name">Premium Magnesium</div>
+                    <div class="ingredient-amount">Bioavailable Form</div>
+                    <p>For muscle recovery and nervous system support. Because chasing toddlers is basically CrossFit.</p>
+                </div>
+                
+                <div class="ingredient-card fade-in">
+                    <div class="ingredient-name">Choline</div>
+                    <div class="ingredient-amount">Brain-Boosting Dose</div>
+                    <p>Mental clarity for when you need to remember where you put literally everything. Car keys, anyone?</p>
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px; padding: 30px; background: #fff5f0; border-radius: 15px; border-left: 5px solid #ff7a3d; max-width: 600px; margin-left: auto; margin-right: auto;">
+                <h4 style="color: #cc5a2b; margin-bottom: 15px;">🍯 Naturally Sweetened with Monk Fruit</h4>
+                <p style="color: #cc5a2b;">Zero added sugar, zero guilt. Just clean energy that tastes like a treat you actually deserve.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="what-kids-notice">
+        <div class="container">
+            <h2 class="section-title">What Your Kids Will Notice</h2>
+            <p class="section-subtitle">When you have energy, everything changes</p>
+            
+            <div class="kids-benefits">
+                <div class="kids-benefit fade-in">
+                    <span class="kids-benefit-icon">😊</span>
+                    <h3>More Patience</h3>
+                    <p>Deep breaths instead of deep sighs. The meltdowns still happen, but you handle them like the superhero you are.</p>
+                </div>
+                
+                <div class="kids-benefit fade-in">
+                    <span class="kids-benefit-icon">🎮</span>
+                    <h3>More Playtime</h3>
+                    <p>"Yes, we can build that tower again." "Sure, let's have that dance party." Energy = engagement.</p>
+                </div>
+                
+                <div class="kids-benefit fade-in">
+                    <span class="kids-benefit-icon">👂</span>
+                    <h3>Present Listening</h3>
+                    <p>You actually hear their stories about school, their wild theories about dinosaurs, their very important observations about clouds.</p>
+                </div>
+                
+                <div class="kids-benefit fade-in">
+                    <span class="kids-benefit-icon">✨</span>
+                    <h3>The Parent You Want to Be</h3>
+                    <p>Not perfect—just present. Not endless—just enough. The version of yourself that shows up fully.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="progress-section">
+        <div class="container">
+            <h2 class="section-title" style="color: #333;">From Our Lab to Your Life</h2>
+            <p class="section-subtitle" style="color: #666;">We're perfecting the formula so you can perfect your day</p>
+            
+            <div class="progress-container fade-in">
+                <h3 style="color: #ff7a3d; margin-bottom: 15px;">Development Progress</h3>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <p style="font-weight: bold; color: #333;">75% Complete</p>
+                <p style="color: #666; margin-top: 15px;">Currently optimizing taste and absorption for maximum effectiveness. Because if it doesn't taste good, you won't take it consistently.</p>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 40px; max-width: 800px; margin-left: auto; margin-right: auto;">
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; border-top: 3px solid #28a745;">
+                    <h4 style="color: #28a745;">✅ Formula Locked</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Science-backed ingredients confirmed</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; border-top: 3px solid #ff7a3d;">
+                    <h4 style="color: #ff7a3d;">🔬 Testing Phase</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Optimizing taste & effectiveness</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; border-top: 3px solid #6c757d;">
+                    <h4 style="color: #6c757d;">📦 Production Prep</h4>
+                    <p style="font-size: 0.9rem; color: #666;">Manufacturing partners selected</p>
+                </div>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 15px; border-top: 3px solid #8bc8a8;">
+                    <h4 style="color: #8bc8a8;">🚀 Launch Ready</h4>
+                    <p style="font-size: 0.9rem; color: #666;">August 2025 target</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Ready to Get Your Energy Back?</h2>
+            <p class="section-subtitle">Join the waitlist and be first in line when we launch this August</p>
+            
+            <form 
+            class="waitlist-form"
+            action="https://app.kit.com/forms/8068082/subscriptions"
+            method="post"
+            >
+                <input type="email" placeholder="Your email address" required>
+                <button type="submit" class="pulse">Join the Revolution</button>
+            </form>
+            
+            <div class="benefits-list">
+                <div class="benefit-item fade-in">
+                    <div class="checkmark">✓</div>
+                    <span>First access when we launch</span>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="checkmark">✓</div>
+                    <span>Exclusive early-bird pricing</span>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="checkmark">✓</div>
+                    <span>Beta testing opportunities</span>
+                </div>
+                
+                <div class="benefit-item fade-in">
+                    <div class="checkmark">✓</div>
+                    <span>No spam, just energy updates</span>
+                </div>
+            </div>
+            
+            <p style="margin-top: 40px; font-size: 1.1rem; opacity: 0.9;">
+                <strong>Expected Launch: August 2025</strong><br>
+                From David & Sara at Daily Boost Labs<br>
+                <em>"Fellow parents who finally cracked the code on sustainable energy"</em>
+            </p>
+        </div>
+    </section>
+
+    <footer style="background: #111; color: white; padding: 40px 20px; text-align: center;">
+  <div style="margin-bottom: 20px;">
+    <strong>Follow Snacktime Energy:</strong>
+  </div>
+  <nav aria-label="Social media links">
+    <a href="https://www.instagram.com/Snacktime_Energy" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: white;">Instagram</a>
+    <a href="https://www.tiktok.com/@SnacktimeEnergy" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: white;">TikTok</a>
+    <a href="https://www.pinterest.com/SnacktimeEnergy" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: white;">Pinterest</a>
+    <a href="https://www.facebook.com/people/Snacktime-Energy/61576823692756/#" target="_blank" rel="noopener noreferrer" style="margin: 0 10px; color: white;">Facebook</a>
+  </nav>
+  <div style="margin-top: 20px; font-size: 0.9rem; opacity: 0.6;">
+    © 2025 Daily Boost Labs. All rights reserved.
+  </div>
+</footer>
+
+    <script>
+        // Simple form handling
+        document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const email = this.querySelector('input').value;
+            const button = this.querySelector('button');
+            
+            if (email) {
+                button.textContent = 'Welcome to the Revolution!';
+                button.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                setTimeout(() => {
+                    button.textContent = 'Join the Revolution';
+                    button.style.background = 'linear-gradient(135deg, #ff7a3d, #8bc8a8)';
+                }, 3000);
+            }
+        });
+        
+        // Animate energy meters when they come into view
+        const observerOptions = {
+            threshold: 0.3,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('timeline')) {
+                        const fills = entry.target.querySelectorAll('.energy-fill');
+                        fills.forEach(fill => {
+                            fill.style.width = fill.classList.contains('high') ? '90%' :
+                                             fill.classList.contains('medium') ? '60%' :
+                                             fill.classList.contains('low') ? '30%' : '10%';
+                        });
+                    }
+                    
+                    if (entry.target.classList.contains('progress-container')) {
+                        const progressFill = entry.target.querySelector('.progress-fill');
+                        progressFill.style.width = '75%';
+                    }
+                    
+                    if (entry.target.classList.contains('fade-in')) {
+                        entry.target.classList.add('visible');
+                    }
+                }
+            });
+        }, observerOptions);
+        
+        // Observe timeline for energy meters
+        document.querySelectorAll('.timeline').forEach(timeline => {
+            observer.observe(timeline);
+        });
+        
+        // Observe progress container
+        document.querySelectorAll('.progress-container').forEach(container => {
+            observer.observe(container);
+        });
+        
+        // Observe fade-in elements
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+        
+        const productImg = document.querySelector('.product-image img');
+    </script>
+</body>
+</html>

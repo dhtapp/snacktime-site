@@ -334,6 +334,35 @@ body {
     text-align: center;
 }
 
+/* Base: 2 columns on desktop */
+.moments-grid, .kids-benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+/* For the 4th item, center it below the 2nd */
+.moments-grid > .moment-card:nth-child(4),
+.kids-benefits > .kids-benefit:nth-child(4) {
+  grid-column: 2 / 3; /* aligns 4th box under 2nd */
+  justify-self: center;
+}
+
+/* Optional: On smaller screens, stack in a single column */
+@media (max-width: 600px) {
+  .moments-grid, .kids-benefits {
+    grid-template-columns: 1fr;
+  }
+
+  /* Reset 4th item alignment on mobile */
+  .moments-grid > .moment-card:nth-child(4),
+  .kids-benefits > .kids-benefit:nth-child(4) {
+    grid-column: auto;
+    justify-self: auto;
+  }
+}
+
 .kids-benefits {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
